@@ -1,0 +1,1437 @@
+[
+    {
+        "name": "Google Web - pse.google.com",
+        "active": true,
+        "default": true,
+        "connector": "RequestsGet",
+        "url": "https://www.googleapis.com/customsearch/v1",
+        "query_template": "{url}?cx={cx}&key={key}&q={query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "page_fetch_config_json": {
+            "cache": "false",
+            "headers": {
+                "User-Agent": "Swirlbot/1.0 (+http://swirlaiconnect.com)"
+            },
+            "www.businesswire.com": {
+                "timeout": 60
+            },
+            "www.linkedin.com": {
+                "timeout": 5
+            },
+            "rs.linkedin.com": {
+                "timeout": 5
+            },
+            "uk.linkedin.com": {
+                "timeout": 5
+            },
+            "au.linkedin.com": {
+                "timeout": 5
+            },
+            "timeout": 30
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "cx=7d473806dcdde5bc6,DATE_SORT=sort=date,PAGE=start=RESULT_INDEX,NOT_CHAR=-",
+        "result_processors": [
+            "MappingResultProcessor",
+            "DateFinderResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=searchInformation.totalResults,RETRIEVED=queries.request[0].count,RESULTS=items",
+        "result_mappings": "url=link,body=snippet,author=displayLink,cacheId,pagemap.metatags[*].['og:type'],pagemap.metatags[*].['og:site_name'],pagemap.metatags[*].['og:description'],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "key=AIzaSyDvVeE-L6nCC9u-TTGuhggvSmzhtiTHJsA",
+        "tags": [
+            "Google",
+            "Web",
+            "WWW"
+        ]
+    },
+    {
+        "name": "Google News - news.google.com",
+        "active": true,
+        "default": true,
+        "connector": "RequestsGet",
+        "url": "https://news.google.com/rss/search",
+        "query_template": "{url}?q={query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT_CHAR=-",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "RESULTS=rss.channel.item",
+        "result_mappings": "title=title,body=description,author=source.['#text'],date_published=pubDate,url=link,source.['@url'],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Google",
+            "News",
+            "RSS"
+        ]
+    },
+    {
+        "name": "LinkedIn - www.linkedin.com",
+        "active": true,
+        "default": true,
+        "connector": "RequestsGet",
+        "url": "https://www.googleapis.com/customsearch/v1",
+        "query_template": "{url}?cx={cx}&key={key}&q={query_string}+-post",
+        "post_query_template": {},
+        "http_request_headers": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "cx=333906f8f74144c5c,DATE_SORT=sort=date,PAGE=start=RESULT_INDEX,NOT_CHAR=-",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "RequireQueryStringInTitleResultProcessor",
+            "DateFinderResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=searchInformation.totalResults,RETRIEVED=queries.request[0].count,RESULTS=items",
+        "result_mappings": "title= htmlTitle,url=link,body=snippet,cacheId,pagemap.metatags[*].['og:type'],pagemap.metatags[*].locale,pagemap.metatags[*].['og:image'],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "key=AIzaSyDvVeE-L6nCC9u-TTGuhggvSmzhtiTHJsA",
+        "eval_credentials": "",
+        "tags": [
+            "LinkedIn",
+            "People"
+        ]
+    },
+    {
+        "name": "Swirl Documentation - docs.swirlaiconnect.com",
+        "active": true,
+        "default": true,
+        "connector": "RequestsGet",
+        "url": "https://www.googleapis.com/customsearch/v1",
+        "query_template": "{url}?cx={cx}&key={key}&q={query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "page_fetch_config_json": {
+            "cache": "false",
+            "headers": {
+                "User-Agent": "Swirlbot/1.0 (+http://swirlaiconnect.com)"
+            },
+            "www.businesswire.com": {
+                "timeout": 60
+            },
+            "www.linkedin.com": {
+                "timeout": 5
+            },
+            "rs.linkedin.com": {
+                "timeout": 5
+            },
+            "uk.linkedin.com": {
+                "timeout": 5
+            },
+            "au.linkedin.com": {
+                "timeout": 5
+            },
+            "timeout": 30
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "cx=f047885d9696f447c,DATE_SORT=sort=date,PAGE=start=RESULT_INDEX,NOT_CHAR=-",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "DateFinderResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=searchInformation.totalResults,RETRIEVED=queries.request[0].count,RESULTS=items",
+        "result_mappings": "title=title,url=link,body=snippet,author=displayLink,cacheId,pagemap.metatags[*].['og:type'],pagemap.metatags[*].['og:site_name'],pagemap.metatags[*].['og:description'],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "key=AIzaSyDvVeE-L6nCC9u-TTGuhggvSmzhtiTHJsA",
+        "eval_credentials": "",
+        "tags": [
+            "Swirl"
+        ]
+    },
+    {
+        "name": "Internet Archive Items - archive.org",
+        "active": true,
+        "default": true,
+        "connector": "RequestsGet",
+        "url": "https://archive.org/services/search/v1/scrape?xvar=production&fields=*&count=100",
+        "query_template": "{url}&q={query_string}",
+        "post_query_template": {},
+        "http_request_headers": {
+            "Content-Type": "application/json"
+        },
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total,RESULTS=items",
+        "result_mappings": "title=title,body=description,date_published=publicdate,author=creator,url='https://archive.org/details/{identifier}',curatenote,files_count,subject,format[*],collection[*],downloads,scanner,mediatype,primary_collection,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "InternetArchive"
+        ]
+    },
+    {
+        "name": "Europe PubMed Central - EuropePMC.org",
+        "active": true,
+        "default": true,
+        "connector": "RequestsGet",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+        "query_template": "{url}?query={query_string}&resultType=core&format=json",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "page_fetch_config_json": {
+            "cache": "false",
+            "headers": {
+                "User-Agent": "Swirlbot/1.0 (+http://swirlaiconnect.com)"
+            },
+            "timeout": 10
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT_CHAR=-",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=hitCount,RESULTS=resultList.result",
+        "result_mappings": "title=title,body=abstractText,author=authorString,date_published=journalInfo.printPublicationDate,date_published_display=journalInfo.dateOfPublication,url='https://europepmc.org/article/{source}/{id}',pmid,pmcid,citedByCount,journalInfo.journal.title,authorList.author[*].fullName,meshHeadingList.meshHeading[*].descriptorName,keywordList.keyword[*],chemicalList.chemical[*].name,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "EuropePMC",
+            "EPMC",
+            "STM"
+        ]
+    },
+    {
+        "name": "ArXiv - arXiv.org",
+        "active": true,
+        "default": true,
+        "connector": "RequestsGet",
+        "url": "http://export.arxiv.org/api/query",
+        "query_template": "{url}?search_query=all:{query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=$.feed['opensearch:totalResults']['#text'],RESULTS=feed.entry",
+        "result_mappings": "title=title,body=summary,author=author.name,date_published=published,url=id,updated,author[*].name,['arxiv:comment'][*].['#text'],['arxiv:journal_ref'][*].['#text'],category[*].['@term'],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "arXiv",
+            "STM"
+        ]
+    },
+    {
+        "name": "IT News - NLResearch.com",
+        "active": false,
+        "default": true,
+        "connector": "RequestsGet",
+        "url": "https://nlresearch.com/results.php?datasource=BRECE&language=1&periodDate=-7&resultsPerPage=10&micpr=0&extended=1&output=json",
+        "query_template": "{url}&login={login}&password={password}&textQuery={query_string}",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "PAGE=startNumber=RESULT_INDEX,DATE_SORT=sort=2,RELEVANCY_SORT=sort=1,NOT=true,NOT_CHAR=-",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=header.@attributes.total_documents,RESULTS=result_list.result,RESULT=document",
+        "result_mappings": "body=summary,date_published=date,author=publisher,type,source,country,language,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "login=your-NLResearch-username,password=your-NLResearch-password",
+        "tags": [
+            "News",
+            "NorthernLight"
+        ]
+    },
+    {
+        "name": "Generative AI",
+        "active": false,
+        "default": true,
+        "connector": "GenAI",
+        "url": "",
+        "query_template": "",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "PROMPT='Tell me about: {query_to_provider}'",
+        "result_processors": [
+            "GenericResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "",
+        "results_per_query": 10,
+        "credentials": "<your-openai-API-key>",
+        "tags": [
+            "GenAI",
+            "Question"
+        ]
+    },
+    {
+        "name": "Boards - Miro.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://api.miro.com/v2/boards",
+        "query_template": "{url}?query={query_string}",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total,RESULTS=data",
+        "result_mappings": "title=name,body=description,url=viewLink,date_published=modifiedAt,owner.name,picture.imageURL,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-Miro-api-token",
+        "tags": [
+            "Drawings",
+            "Miro",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Company Funding Records - BigQuery",
+        "active": false,
+        "default": false,
+        "connector": "BigQuery",
+        "url": "",
+        "query_template": "select {fields} from `{table}` where search({field1}, '{query_string}') or search({field2}, '{query_string}');",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "fields=*,sort_by_date=fundedDate,table=funding.funding,field1=company,field2=city",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title='{company}',body='{company} raised ${raisedamt} series {round} on {fundeddate}. The company is located in {city} {state} and has {numemps} employees.',url=id,date_published=fundeddate,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "/path/to/bigquery/token.json",
+        "tags": [
+            "Company",
+            "BigQuery",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Company Funding Records - SQLite3",
+        "active": false,
+        "default": false,
+        "connector": "Sqlite3",
+        "url": "db.sqlite3",
+        "query_template": "select {fields} from {table} where {field1} like '%%{query_string}%%' or {field2} like '%%{query_string}%%';",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "fields=*,sort_by_date=fundeddate,table=funding,field1=city,field2=company",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title='{company} series {round}',body='{city} {fundeddate}: {company} raised usd ${raisedamt}\nThe company is headquartered in {city} and employs {numemps}',date_published=fundeddate,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "tags": [
+            "Company",
+            "SQLite3",
+            "Internal"
+        ]
+    },
+    {
+        "name": "techproducts - Apache Solr",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "http://localhost:8983/solr/{collection}/select?wt=json",
+        "query_template": "{url}&q={query_string}",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "collection=techproducts,PAGE=start=RESULT_ZERO_INDEX,NOT=True,NOT_CHAR=-",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=numFound,RESULTS=response.docs",
+        "result_mappings": "title=name,body=features,response",
+        "results_per_query": 10,
+        "credentials": "HTTPBasicAuth('solr-username','solr-password')",
+        "tags": [
+            "Solr",
+            "TechProducts",
+            "Internal"
+        ]
+    },
+    {
+        "name": "ENRON Email - OpenSearch",
+        "active": false,
+        "default": false,
+        "connector": "OpenSearch",
+        "url": "https://localhost:9200/",
+        "query_template": "{\"query\":{\"query_string\":{\"query\":\"{query_string}\",\"default_field\":\"{default_field}\",\"default_operator\":\"and\"}}}",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "index_name=email,default_field=content,sort_by_date=date_published.keyword,NOT=true,NOT_CHAR=-",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "url=_source.url,date_published=_source.date_published,author=_source.author,title=_source.subject,body=_source.content,_source.to,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "verify_certs=[True|False],ca_certs=/path/to/cert/file.crt,admin:admin",
+        "tags": [
+            "Enron",
+            "OpenSearch",
+            "Internal"
+        ]
+    },
+    {
+        "name": "ENRON Email - Elasticsearch",
+        "active": false,
+        "default": false,
+        "connector": "Elastic",
+        "url": "https://localhost:9200/",
+        "query_template": "index='{index_name}', query={'query_string': {'query': '{query_string}', 'default_field': '{default_field}'}}",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "index_name=email,default_field=content,sort_by_date=date_published.keyword,NOT=true,NOT_CHAR=-",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "url=_source.url,date_published=_source.date_published,author=_source.author,title=_source.subject,body=_source.content,_source.to,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "verify_certs=[True|False],ca_certs=/path/to/cert/file.crt,username:password",
+        "tags": [
+            "Enron",
+            "Elastic",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Articles - JetBrains YouTrack",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://<your-domain>.youtrack.cloud/api/articles?fields=idReadable,reporter(fullName),summary,content,attachments(name),project(name),parentArticle(summary),childArticles(summary),created,updatedBy(fullName),comments(text)",
+        "query_template": "{url}&query={query_string}",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CleanTextResultProcessor",
+            "LenLimitingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title=summary,body=content,date_published=created,author=reporter.fullName,url='https://<your-domain>.youtrack.cloud/articles/{idReadable}',project.name,attachments[*].name,parentArticle.summary,childArticles[*].summary,updatedBy.fullName,comments[*].text,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-youtrack-permanent-token",
+        "tags": [
+            "Articles",
+            "YouTrack",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Issues - JetBrains YouTrack",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://<your-domain>.youtrack.cloud/api/issues?fields=project(name),idReadable,tags(name),summary,description,reporter(fullName),created,votes,commentsCount,comments(text),updater(fullName)",
+        "query_template": "{url}&query={query_string}",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CleanTextResultProcessor",
+            "LenLimitingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title=summary,body=description,date_published=created,author=reporter.fullName,url='https://<your-domain>.youtrack.cloud/issue/{idReadable}',project.name,tags[*].name,votes,commentsCount,comments[*].text,updater.fullName,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-youtrack-permanent-token",
+        "tags": [
+            "Issues",
+            "YouTrack",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Wiki - Atlassian Confluence Cloud",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://<your-domain>.atlassian.net/wiki/rest/api/content/search?expand=history,space,metadata.labels.results,children.attachment,children.page,children.comment,ancestors,body.view",
+        "query_template": "{url}&cql=text~'{query_string}'",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "LenLimitingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=size,RESULTS=results",
+        "result_mappings": "title=title,body=body[*].view[*].value,author=history[*].createdBy[*].publicName,date_published=history[*].createdDate,url='https://<your-domain>.atlassian.net/wiki{_links[*].webui}',space.name,metadata[*].labels[*].results[*].name,children[*].attachment[*].results[*].title,children[*].page[*].results[*].title,ancestors[*].title,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "HTTPBasicAuth('<your-username>','<your-atlassian-token>')",
+        "tags": [
+            "Confluence",
+            "Atlassian",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Issues - Atlassian Jira Cloud",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://<your-domain>.atlassian.net/rest/api/3/search?fields=*all",
+        "query_template": "{url}&jql=text~'{query_string}'",
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "LenLimitingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total,RESULTS=issues",
+        "result_mappings": "title=fields.summary,body=fields[description].content[*].content[*].text,date_published=fields[*].created,author=fields[reporter].displayName,url='https://<your-domain>.atlassian.net/browse/{key}',fields[project].name,key,fields[priority].name,fields[status].name,fields[assignee].displayName,fields[*].fixVersions[*].name,fields[votes].votes,fields.labels,fields[comment].comments[*].body[*].content[*].content[*].text,fields[*].subtasks[*].fields[*].summary,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "HTTPBasicAuth('<your-username>','<your-atlassian-token>')",
+        "tags": [
+            "Jira",
+            "Atlassian",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Outlook Messages - Microsoft 365",
+        "active": false,
+        "default": true,
+        "connector": "M365OutlookMessages",
+        "url": "",
+        "query_template": "{url}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true,NOT_CHAR=-",
+        "result_grouping_field": "conversationId",
+        "result_processors": [
+            "MappingResultProcessor",
+            "DedupeByFieldResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title=resource.subject,body=summary,date_published=resource.createdDateTime,author=resource.sender.emailAddress.name,url=resource.webLink,resource.isDraft,resource.importance,resource.hasAttachments,resource.ccRecipients[*].emailAddress[*].name,resource.replyTo[*].emailAddress[*].name,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Microsoft",
+            "Email",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Calendar Events - Microsoft 365",
+        "active": false,
+        "default": true,
+        "connector": "M365OutlookCalendar",
+        "url": "",
+        "query_template": "{url}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true,NOT_CHAR=-",
+        "result_grouping_field": "title",
+        "result_processors": [
+            "MappingResultProcessor",
+            "DedupeByFieldResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title=resource.subject,body=summary,date_published=resource.start.dateTime,url='https://outlook.office.com/calendar/item/{sw_urlencode(hitId)}',resource.sensitivity,resource.type,resource.hasAttachments,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Microsoft",
+            "Calendar",
+            "Internal"
+        ]
+    },
+    {
+        "name": "OneDrive Files - Microsoft 365",
+        "active": false,
+        "default": true,
+        "connector": "M365OneDrive",
+        "url": "",
+        "query_template": "{url}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true,NOT_CHAR=-",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title=resource.name,body='{resource.name} - {summary}',date_published=resource.createdDateTime,url=resource.webUrl,author=resource.createdBy.user.displayName,resource.lastModifiedBy.user.displayName,resource.lastModifiedDateTime,FILE_SYSTEM,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Microsoft",
+            "OneDrive",
+            "Internal"
+        ]
+    },
+    {
+        "name": "SharePoint Sites - Microsoft 365",
+        "active": false,
+        "default": true,
+        "connector": "M365SharePointSites",
+        "url": "",
+        "query_template": "{url}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true,NOT_CHAR=-",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title=resource.displayName,body=summary,date_published=resource.createdDateTime,url=resource.webUrl,resource.lastModifiedDateTime,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Microsoft",
+            "SharePoint",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Teams Chat - Microsoft 365",
+        "active": false,
+        "default": true,
+        "connector": "MicrosoftTeams",
+        "url": "",
+        "query_template": "{url}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true,NOT_CHAR=-",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title=summary,body=summary,date_published=resource.createdDateTime,author=resource.from.emailAddress.name,url=resource.webLink,resource.importance,resource.channelIdentity.channelId,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Microsoft",
+            "Teams",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Code - GitHub.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://api.github.com/search/code",
+        "query_template": "{url}?q={query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {
+            "Accept": "application/vnd.github.text-match+json"
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total_count,RESULTS=items",
+        "result_mappings": "title=name,body=text_matches[*].fragment,author=repository.owner.login,url=html_url,repository.full_name,path,repository.html_url,repository.description,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-GitHub-PAT",
+        "eval_credentials": "",
+        "tags": [
+            "GitHub",
+            "Code",
+            "Internal",
+            "Development"
+        ]
+    },
+    {
+        "name": "Issues - GitHub.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://api.github.com/search/issues",
+        "query_template": "{url}?q={query_string}+is%3Aissue",
+        "post_query_template": "{}",
+        "http_request_headers": {
+            "Accept": "application/vnd.github.text-match+json"
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total_count,RESULTS=items",
+        "result_mappings": "title=title,body=text_matches[*].fragment,author=user.login,date_published=created_at,url=html_url,state,assignees[*].login,milestone.title,comments,updated_at,closed_at,labels[*].name,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-GitHub-PAT",
+        "eval_credentials": "",
+        "tags": [
+            "GitHub",
+            "Issues",
+            "Internal",
+            "Development"
+        ]
+    },
+    {
+        "name": "Pull Requests - GitHub.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://api.github.com/search/issues",
+        "query_template": "{url}?q={query_string}+is%3Apull-request",
+        "post_query_template": "{}",
+        "http_request_headers": {
+            "Accept": "application/vnd.github.text-match+json"
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total_count,RESULTS=items",
+        "result_mappings": "title=title,body=text_matches[*].fragment,author=user.login,date_published=created_at,url=html_url,number,state,updated_at,pull_request.merged_at,closed_at,labels[*].name,pull_request.diff_url,body,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-GitHub-PAT",
+        "eval_credentials": "",
+        "tags": [
+            "GitHub",
+            "PullRequests",
+            "Internal",
+            "Development"
+        ]
+    },
+    {
+        "name": "Commits - GitHub.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://api.github.com/search/commits",
+        "query_template": "{url}?q={query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {
+            "Accept": "application/vnd.github.text-match+json"
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total_count,RESULTS=items",
+        "result_mappings": "title=commit.message,body=text_matches[*].fragment,author=commit.author.name,date_published=commit.author.date,url=html_url,commit.comment_count,committer.login,parents[*].html_url,repository.full_name,repository.html_url,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-GitHub-PAT",
+        "eval_credentials": "",
+        "tags": [
+            "GitHub",
+            "Commits",
+            "Internal",
+            "Development"
+        ]
+    },
+    {
+        "name": "Deals - HubSpot.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsPost",
+        "url": "https://api.hubapi.com/crm/v3/objects/deals/search",
+        "query_template": "{url}",
+        "post_query_template": {
+            "query": "{query_string}",
+            "limit": "100"
+        },
+        "http_request_headers": {
+            "Content-Type": "application/json"
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total,RESULTS=results",
+        "result_mappings": "title=properties.dealname,body='Amount: {properties.amount} - Stage: {properties.dealstage}',date_published=createdAt,url='https://app.hubspot.com/contacts/<your-org-id>/record/0-3/{id}',id,properties.pipeline,updatedAt,properties.closedate,archived,links[*],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-HubSpot-PAT",
+        "eval_credentials": "",
+        "tags": [
+            "HubSpot",
+            "Deal",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Companies - HubSpot.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsPost",
+        "url": "https://api.hubapi.com/crm/v3/objects/companies/search",
+        "query_template": "{url}",
+        "post_query_template": {
+            "query": "{query_string}",
+            "limit": "100"
+        },
+        "http_request_headers": {
+            "Content-Type": "application/json"
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total,RESULTS=results",
+        "result_mappings": "title=properties.name,body='{properties.name}: {properties.domain}',date_published=createdAt,url='https://app.hubspot.com/contacts/<your-org-id>/record/0-2/{id}',id,updatedAt,archived,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-HubSpot-PAT",
+        "eval_credentials": "",
+        "tags": [
+            "HubSpot",
+            "Company",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Contacts - HubSpot.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsPost",
+        "url": "https://api.hubapi.com/crm/v3/objects/contacts/search",
+        "query_template": "{url}",
+        "post_query_template": {
+            "query": "{query_string}",
+            "limit": "100"
+        },
+        "http_request_headers": {
+            "Content-Type": "application/json"
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total,RESULTS=results",
+        "result_mappings": "title='{properties.firstname} {properties.lastname}',body='{properties.firstname} {properties.lastname}:  {properties.email}',date_published=createdAt,author=properties.email,url='https://app.hubspot.com/contacts/<your-org-id>/record/0-1/{id}',id,updatedAt,archived,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=your-HubSpot-PAT",
+        "eval_credentials": "",
+        "tags": [
+            "HubSpot",
+            "Contact",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Hacker News Stories - HN.Algolia.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "http://hn.algolia.com/api/v1/search?tags=story",
+        "query_template": "{url}&query={query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=nbHits,RESULTS=hits",
+        "result_mappings": "title=title,body=story_text,author=author,date_published=created_at,url='https://news.ycombinator.com/item?id={objectID}',url,points,num_comments,_tags[*],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "HackerNews",
+            "Stories",
+            "Development"
+        ]
+    },
+    {
+        "name": "Hacker News Comments - HN.Algolia.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "http://hn.algolia.com/api/v1/search?tags=comment",
+        "query_template": "{url}&query={query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=nbHits,RESULTS=hits",
+        "result_mappings": "title=story_title,body=comment_text,author=author,date_published=created_at,url='https://news.ycombinator.com/item?id={objectID}',story_url,points,num_comments,_tags[*],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "HackerNews",
+            "Comments",
+            "Development"
+        ]
+    },
+    {
+        "name": "ServiceNow Knowledge - ServiceNow.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://<your-ServiceNow-domain>.service-now.com/api/sn_km_api/knowledge/articles?fields=active,article_type,author,kb_category,sys_created_on,helpful_count,kb_knowledge_base,published,rating,topic,sys_updated_on,sys_updated_by,sys_view_count",
+        "query_template": "{url}?query={query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {
+            "Accept": "application/json"
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=result.meta.count,RESULTS=result.articles",
+        "result_mappings": "title=title,body=snippet,date_published=fields.published.value,author=fields.author.display_value,url='https://<your-ServiceNow-domain>.service-now.com/kb_view.do?sysparm_article={number}',fields.active.display_value,fields.article_type.display_value,fields.kb_category.display_value,fields.sys_created_on.display_value,fields.helpful_count.value,fields.kb_knowledge_base.display_value,fields.rating.value,fields.topic.display_value,fields.sys_updated_on.display_value,fields.sys_updated_by.display_value,fields.sys_view_count.value,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "HTTPBasicAuth('servicenow-username','servicenow-password')",
+        "eval_credentials": "",
+        "tags": [
+            "ServiceNow",
+            "Knowledge",
+            "Articles"
+        ]
+    },
+    {
+        "name": "ServiceNow Service Catalog - ServiceNow.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://<your-ServiceNow-domain>.service-now.com/api/sn_sc/servicecatalog/items",
+        "query_template": "{url}?sysparm_text={query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {
+            "Accept": "application/json"
+        },
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "RESULTS=result",
+        "result_mappings": "title=short_description,body=description,url='https://<your-ServiceNow-domain>.service-now.com/com.glideapp.servicecatalog_cat_item_view.do?sysparm_id={sys_id}',name,catalogs[*].title,category.title,availability,request_method,price,recurring_frequency,order,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "HTTPBasicAuth('servicenow-username','servicenow-password')",
+        "eval_credentials": "",
+        "tags": [
+            "ServiceNow",
+            "ServiceCatalog",
+            "Items"
+        ]
+    },
+    {
+        "name": "Organizations - Crunchbase.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsPost",
+        "url": "https://api.crunchbase.com/api/v4/searches/organizations",
+        "query_template": "{url}",
+        "post_query_template": {
+            "field_ids": [
+                "created_at",
+                "entity_def_id",
+                "facebook",
+                "facet_ids",
+                "identifier",
+                "image_id",
+                "image_url",
+                "linkedin",
+                "location_identifiers",
+                "name",
+                "permalink",
+                "short_description",
+                "stock_exchange_symbol",
+                "twitter",
+                "updated_at",
+                "uuid"
+            ],
+            "query": [
+                {
+                    "type": "predicate",
+                    "field_id": "identifier",
+                    "operator_id": "contains",
+                    "values": [
+                        "{query_string}"
+                    ]
+                }
+            ]
+        },
+        "http_request_headers": {
+            "Content-Type": "application/json",
+            "X-cb-user-key": "<your-Crunchbase-Basic-API-key>"
+        },
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "NOT=true",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=count,RESULTS=entities",
+        "result_mappings": "title=properties.name,body=properties.short_description,date_published=properties.created_at,url='https://www.crunchbase.com/organization/{properties.permalink}',properties.updated_at,properties.stock_exchange_symbol,properties.facet_ids[*],properties.location_identifiers[*].value,properties.linkedin.value,properties.facebook.value,properties.twitter.value,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Crunchbase",
+            "Organizations",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Bitcoin Transaction - Blockchain.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://blockchain.info/rawtx/",
+        "query_template": "{url}{query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {
+            "X-API-Token": "<your-blockchain.com-api-key>"
+        },
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title='Bitcoin Hash ID {hash}',body='Transaction ID {hash} sent {sw_btcconvert(inputs[*].prev_out.value)} BTC from these addresses {inputs[*].prev_out.addr} to these addresses {out[*].addr} for a fee of {sw_btcconvert(fee)} BTC.',date_published=time,url='https://www.blockchain.com/explorer/transactions/btc/{hash}',ver,weight,size,block_index,lock_time,double_spend,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Blockchain",
+            "Bitcoin",
+            "HashID"
+        ]
+    },
+    {
+        "name": "Bitcoin Address - Blockchain.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://blockchain.info/rawaddr/",
+        "query_template": "{url}{query_string}",
+        "post_query_template": "{}",
+        "http_request_headers": {
+            "X-API-Token": "<your-blockchain.com-api-key>"
+        },
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title='Bitcoin Address {address}',body='Bitcoin wallet {address} has made {n_tx} transactions. It has sent {sw_btcconvert(total_sent)} BTC and has received {sw_btcconvert(total_received)} BTC. The current value of this wallet is {sw_btcconvert(final_balance)} BTC.',date_published=txs[0].time,url='https://www.blockchain.com/explorer/addresses/btc/{address}',hash160,n_unredeemed,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Blockchain",
+            "Bitcoin",
+            "Wallet"
+        ]
+    },
+    {
+        "name": "Cards - Atlassian Trello",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://api.trello.com/1/search?modelTypes=cards&card_board=true&card_members=true&card_attachments=true&partial=true&card_list=true&card_fields=id,closed,dueComplete,dateLastActivity,desc,due,email,labels,name,start,url",
+        "query_template": "{url}&query={query_string}&key=<your-Trello-API-Key>&token=<your-Trello-API-Token>",
+        "post_query_template": {},
+        "http_request_headers": {
+            "Content-Type": "application/json"
+        },
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CleanTextResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "RESULTS=cards",
+        "result_mappings": "title=name,body=desc,date_published=dateLastActivity,url=url,id,board.name,list.name,labels[*].color,members[*].fullName,attachments[*].name,email,start,due,dueComplete,closed,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "Trello",
+            "Atlassian",
+            "Internal"
+        ]
+    },
+    {
+        "name": "Tasks - Asana.com",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://app.asana.com/api/1.0/workspaces/<your-workspace-gid>/tasks/search?opt_fields=gid,resource_type,assignee_status,completed,completed_at,completed_by.name,created_at,created_by.name,due_on,likes.user.name,modified_at,name,notes,num_subtasks,start_on,assignee.name,assignee_section.name,followers.name,parent.name,permalink_url,projects.name,tags.name,workspace.name",
+        "query_template": "{url}&text={query_string}",
+        "post_query_template": {},
+        "http_request_headers": {
+            "Content-Type": "application/json"
+        },
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CleanTextResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "RESULTS=data",
+        "result_mappings": "title=name,body=notes,date_published=created_at,author=created_by.name,url=permalink_url,gid,resource_type,num_subtasks,start_on,due_on,assignee.name,assignee_status,assignee_section.name,completed,completed_at,completed_by.name,modified_at,workspace.name,projects[*].name,parent.name,followers[*].name,tags[*].name,likes[*].user.name,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "bearer=<your-Asana-PAT>",
+        "eval_credentials": "",
+        "tags": [
+            "Asana",
+            "Tasks",
+            "Internal"
+        ]
+    },
+    {
+        "name": "IMDB Movies - MongoDB",
+        "active": false,
+        "default": false,
+        "connector": "MongoDB",
+        "url": "sample_mflix:movies",
+        "query_template": "",
+        "query_template_json": {
+            "$text": {
+                "$search": "{query_string}"
+            }
+        },
+        "post_query_template": {},
+        "post_query_template_json": {},
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "sort_by_date=year,NOT_CHAR=-,MATCH_ALL",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title=name,body=fullplot,date_published=year,date_published_display=year,author=directors[*],url=poster,genres[*],rated,runtime,languages[*],cast[*],writers[*],awards.text,imdb.rating,tomatoes.viewer.rating,tomatoes.critic.rating,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "mongodb+srv://<mongodb-username>:<mongodb-password>@<mongdb-cluster>.mongodb.net/?retryWrites=true&w=majority",
+        "eval_credentials": "",
+        "tags": [
+            "Movies",
+            "MongoDB"
+        ]
+    },
+    {
+        "name": "Free Company Records - Snowflake",
+        "active": false,
+        "default": false,
+        "connector": "Snowflake",
+        "url": "<snowflake-instance-address>",
+        "query_template": "SELECT {fields} FROM {table} WHERE {field1} ILIKE '%{query_string}%' AND NULLIF(TRIM(founded), '') IS NOT NULL ORDER BY TRY_TO_NUMBER(REGEXP_REPLACE(SPLIT_PART(size, '-', 1), '[^0-9]', '')) DESC;",
+        "post_query_template": {},
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "fields=*,sort_by_date=founded,table=FREECOMPANYDATASET,field1=name",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "title='{name}  ({founded})',body='{name} was founded in {founded} in {country}. It has {size} employees and operates in the {industry} industry.',url='https://{linkedin_url}',date_published=founded,NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "<username>:<password>:FREE_COMPANY_DATASET:COMPUTE_WH",
+        "eval_credentials": "",
+        "tags": [
+            "Company",
+            "Snowflake"
+        ]
+    },
+    {
+        "name": "Entities - LittleSis.org",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://littlesis.org/api/entities/search",
+        "query_template": "{url}?q={query_string}*",
+        "post_query_template": "{}",
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "RESULTS=data",
+        "result_mappings": "title=attributes.name,body=attributes.summary,date_published=attributes.updated_at,url=links.self,attributes.id,attributes.start_date,attributes.end_date,attributes.website,attributes.blurb,attributes.aliases[*],attributes.types[*],attributes.extensions[*].Person.birthplace,attributes.tags[*],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "LittleSis",
+            "Entities"
+        ]
+    },
+    {
+        "name": "Entities - OpenSanctions.org",
+        "active": false,
+        "default": false,
+        "connector": "RequestsGet",
+        "url": "https://api.opensanctions.org/search/default",
+        "query_template": "{url}?q={query_string}*",
+        "post_query_template": "{}",
+        "http_request_headers": {
+            "Authorization": "ApiKey <OpenSanctions-API-Key>"
+        },
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "FOUND=total.value,RESULTS=results",
+        "result_mappings": "title=caption,body=properties.notes[*],date_published=properties.createdAt[*],url='https://www.opensanctions.org/entities/{id}',properties.title[*],properties.nationality[*],properties.birthDate[*],properties.gender[*],properties.name[*],properties.alias[*],properties.position[*],properties.topics[*],properties.sourceUrl[*],id,target,first_seen,properties.modifiedAt[*],NO_PAYLOAD",
+        "results_per_query": 10,
+        "credentials": "",
+        "eval_credentials": "",
+        "tags": [
+            "OpenSanctions",
+            "Entities"
+        ]
+    },
+    {
+        "name": "PineconeDB",
+        "active": false,
+        "default": false,
+        "authenticator": "",
+        "connector": "PineconeDB",
+        "url": "<index-name>",
+        "query_template": "",
+        "query_template_json": {},
+        "post_query_template": {},
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "AutomaticPayloadMapperResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "",
+        "results_per_query": 10,
+        "credentials": "<pinecone-api-key>",
+        "eval_credentials": "",
+        "tags": [
+            "Pinecone",
+            "model:<your-embedding-model>"
+        ]
+    },
+    {
+        "name": "QdrantDB",
+        "active": false,
+        "default": false,
+        "authenticator": "",
+        "connector": "QdrantDB",
+        "url": "qdrant_url-collection_name",
+        "query_template": "",
+        "query_template_json": {},
+        "post_query_template": {},
+        "http_request_headers": {},
+        "page_fetch_config_json": {},
+        "query_processors": [
+            "AdaptiveQueryProcessor"
+        ],
+        "query_mappings": "",
+        "result_grouping_field": "",
+        "result_processors": [
+            "MappingResultProcessor",
+            "AutomaticPayloadMapperResultProcessor",
+            "CosineRelevancyResultProcessor"
+        ],
+        "response_mappings": "",
+        "result_mappings": "",
+        "results_per_query": 10,
+        "credentials": "<qdrant-api-key>",
+        "eval_credentials": "",
+        "tags": [
+            "Qdrant"
+        ]
+    }
+]

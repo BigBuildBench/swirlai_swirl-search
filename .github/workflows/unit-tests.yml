@@ -1,0 +1,33 @@
+name: Unit Tests
+
+on:
+  # Manual trigger only
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the Code
+        uses: actions/checkout@v4
+      - name: Set Up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.4'
+          cache: 'pip'
+      - name: Install Swirl
+        run: ./install.sh
+      - name: Install the Unit Tests
+        run: ./install-test.sh
+      - name: Run the Unit Tests
+        run: pytest
+      - name: Upload Log Files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: log-files
+          path: |
+            logs/
+            /var/log/syslog*

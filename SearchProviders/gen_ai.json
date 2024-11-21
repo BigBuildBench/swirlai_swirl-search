@@ -1,0 +1,24 @@
+{
+    "name": "Generative AI",
+    "active": false,
+    "default": true,
+    "connector": "GenAI",
+    "url": "",
+    "query_template": "",
+    "query_processors": [
+        "AdaptiveQueryProcessor"
+    ],
+    "query_mappings": "PROMPT='Tell me about: {query_to_provider}'",
+    "result_processors": [
+        "GenericResultProcessor",
+        "CosineRelevancyResultProcessor"
+    ],
+    "response_mappings": "",
+    "result_mappings": "",
+    "results_per_query": 10,
+    "credentials": "<your-openai-API-key>",
+    "tags": [
+        "GenAI",
+        "Question"
+    ]
+}
